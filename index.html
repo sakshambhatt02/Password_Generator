@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./script.js"></script>
+  </head>
+  <body
+    class="w-full min-h-screen bg-gradient-to-br from-[#1a2a6c] via-[#b21f1f] to-[#fdbb2d] flex items-center justify-center font-serif p-4"
+  >
+    <div
+      class="container max-w-lg mx-auto shadow-xl rounded-xl bg-white bg-opacity-90 p-6 md:p-8"
+    >
+      <nav
+        class="text-center text-xl md:text-2xl font-bold text-gray-800 py-4 border-b border-gray-300"
+      >
+        Generate a Random and Strong Password
+      </nav>
+      <main class="mt-6 md:mt-8 flex flex-col items-center">
+        <h1 class="text-lg md:text-xl font-semibold text-gray-700 mb-4">
+          Customize Your Password
+        </h1>
+        <div class="w-full flex flex-col gap-4 md:gap-6">
+          <label
+            class="flex flex-col md:flex-row md:items-center justify-between"
+          >
+            <span class="text-gray-600 mb-1 md:mb-0">Password length:</span>
+            <input
+              type="number"
+              id="length"
+              class="border rounded-lg w-full md:w-24 p-2 focus:ring focus:outline-none focus:ring-blue-400 text-gray-800"
+              placeholder="e.g., 12"
+            />
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" id="uppercase" class="accent-blue-500" />
+            <span class="text-gray-600">Include uppercase</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" id="lowercase" class="accent-blue-500" />
+            <span class="text-gray-600">Include lowercase</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" id="numbers" class="accent-blue-500" />
+            <span class="text-gray-600">Include numbers</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" id="symbols" class="accent-blue-500" />
+            <span class="text-gray-600">Include symbols</span>
+          </label>
+          <button
+            class="w-full py-2 mt-4 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-300"
+            onclick="generatePassword()"
+          >
+            Generate
+          </button>
+        </div>
+        <div class="mt-6 md:mt-8 w-full text-center">
+          <p class="text-md md:text-lg text-gray-600">Generated Password:</p>
+          <p
+            id="password"
+            class="mt-2 p-3 md:p-4 bg-gray-100 rounded-lg text-gray-900 border border-gray-300 break-words"
+          ></p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
